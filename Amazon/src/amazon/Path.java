@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Svetlana Valentina
  */
 public class Path {
-    public static String depthTraverse(MatrizAdy grafo, String nombre){
+    public static String depthWidth(MatrizAdy grafo, String nombre){
         int valOrigen;
         Integer w = null;
         int intW;
@@ -21,7 +21,7 @@ public class Path {
         
                 
         try{
-            valOrigen = grafo.buscarIndex(nombre);
+            valOrigen = grafo.searchIndex(nombre);
             
            if (valOrigen < 0)throw new Exception("Vertice no existe");
         
@@ -45,7 +45,7 @@ public class Path {
                         
                         w = (Integer) cola.desencolar();                     
                         intW = w;
-//                      System.out.println("Vertice" + verts[intW].getNombre() + "visitado");
+//                      System.out.println("Vertice" + verts[intW].getName() + "visitado");
                         Edge vert = verts[intW];
                         List lista = vert.getProducts();
                         
@@ -53,7 +53,7 @@ public class Path {
                     
                     //Se encolan los adyacentes
                     for (int j = 0; j < grafo.getNumVerts(); j++) {
-                        if((w != j) && (grafo.existeArista(w, j) && arrVisitados[j] == -1)){ //Utilizar la funcion de añadir a la matriz                            
+                        if((w != j) && (grafo.existArist(w, j) && arrVisitados[j] == -1)){ //Utilizar la funcion de añadir a la matriz                            
                             int valNodo = verts[j].getIndex();
                             cola.encolar(valNodo); 
                             arrVisitados[j] = 0;
@@ -83,7 +83,7 @@ public class Path {
         String temp = "";
         
         try{
-            valOrigen = grafo.buscarIndex(nombre);
+            valOrigen = grafo.searchIndex(nombre);
             
             if (valOrigen < 0)throw new Exception("Vertice no existe");
             
@@ -99,14 +99,14 @@ public class Path {
                 Integer sig;
                 sig = (Integer) pila.unstack();
                 valSig = sig;
-//                System.out.println("Vertice" + " " + verts[valSig].getNombre()+ " " + "visitado");
+//                System.out.println("Vertice" + " " + verts[valSig].getName()+ " " + "visitado");
                 
                 Edge vert = verts[valSig];
                 List lista = vert.getProducts();
                 temp += "Almacen" + " " + vert.getName() + "\n" + lista.getInfo() + "\n";
                 
                 for (int j = 0; j < grafo.getNumVerts(); j++){
-                    if((valSig != j) && (grafo.existeArista(valSig, j) && arrVisitados[j] == -1)){
+                    if((valSig != j) && (grafo.existArist(valSig, j) && arrVisitados[j] == -1)){
                         int valNodo = verts[j].getIndex();
                         pila.pile(valNodo); 
                         arrVisitados[j] = 0;
@@ -137,7 +137,7 @@ public class Path {
         
                 
         try{
-            valOrigen = grafo.buscarIndex(nombre);
+            valOrigen = grafo.searchIndex(nombre);
             
            if (valOrigen < 0)throw new Exception("Vertice no existe");
         
@@ -165,7 +165,7 @@ public class Path {
                         List lista = vert.getProducts();                      
                         
                     //formar el arreglo de vertices
-                        encontrado = lista.compararProducto(producto.getName());  
+                        encontrado = lista.compareProduct(producto.getName());  
                         
                         if (encontrado == true){
                             vertices += vert.getName() + ",";
@@ -178,7 +178,7 @@ public class Path {
                     
                     //Se encolan los adyacentes
                     for (int j = 0; j < grafo.getNumVerts(); j++) {
-                        if((w != j) && (grafo.existeArista(w, j) && arrVisitados[j] == -1)){ //Utilizar la funcion de añadir a la matriz                            
+                        if((w != j) && (grafo.existArist(w, j) && arrVisitados[j] == -1)){ //Utilizar la funcion de añadir a la matriz                            
                             int valNodo = verts[j].getIndex();
                             cola.encolar(valNodo); 
                             arrVisitados[j] = 0;
