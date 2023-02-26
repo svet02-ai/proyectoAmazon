@@ -15,7 +15,7 @@ public class List {
     private Node plast;
     private int size;
 
-//GETTERS Y SETTERS 
+//getters and setters 
     
     /**
     *@return pfirst
@@ -59,13 +59,13 @@ public class List {
         this.plast = plast;
     }
 
- //CONSTRUCTOR
+ //constructor
     public List() {
         this.pfirst = null;
         this.size = 0;    
     }
  
- //FUNCIONES PRIMITIVAS
+ //TODAS LAS PRIMITIVAS
     public boolean isEmpty(){
         return pfirst == null;
     }  
@@ -83,7 +83,7 @@ public class List {
         size = 0;
     }
     
-    //OBTENER EL PROXIMO NODO
+    //obtener el nodo siguiente
     public Node nextNode(Node  enlace){
         if(enlace.getPnext() != null){
             enlace =enlace.getPnext();
@@ -94,7 +94,7 @@ public class List {
         }
     }
    
-    //IMPRIMIR
+    //imprimir
 
     /**
      *
@@ -122,7 +122,7 @@ public class List {
         }
     
     /*
-    *@return la información de los productos de la lista
+    *@ retorna la informacion de los productos de la lista
     */
     public String getInfo(){
         Node temp = pfirst;
@@ -199,7 +199,7 @@ public class List {
     
    
     
-    //ELIMINA AL INICIO
+    //elimina al incio
     public void deleteAtStart(){
         if (!isEmpty()){
             pfirst = pfirst.getPnext();
@@ -218,7 +218,7 @@ public class List {
         }
     }
     
-    //AÑADIR AL FINAL
+    //agregar al final
     public void addAtEnd(Node nodo){
         
         if(!this.isEmpty()){ 
@@ -234,7 +234,7 @@ public class List {
         
     }
 
-    //BUSCAR ELEMENTO EN LA LISTA (retorna el nodo con el valor en cuestión)
+    //retorna el nodo con el valor del elemento que queremos buscar en la lista
     public Node Search(Object valor){
         if(isEmpty()){
             JOptionPane.showMessageDialog(null,"Lista vacía");
@@ -254,7 +254,7 @@ public class List {
             return null;
     }
    
-    //ÍNDICE DE LA LISTA
+    //encontrar indice
     public int getIndex(Node nodito){
         if(isEmpty()){
             JOptionPane.showMessageDialog(null, "Lista vacía");
@@ -277,7 +277,7 @@ public class List {
         
     }
     
-    //OBTENER NODO POR INDICE
+    //obtener nodo por indice
     public Node getNode(int posicion){
         if(isEmpty()){
             JOptionPane.showMessageDialog(null, "Lista vacía");

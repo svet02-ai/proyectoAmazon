@@ -16,7 +16,7 @@ public class Path {
         Integer w = null;
         int intW;
         int[] arrVisitados = null;
-        Edge[] verts = grafo.getVerts(); //arreglo con los vertices del grafo
+        Edge[] verts = grafo.getVerts(); //es un arreglo con los vertices del grafo
         String temp = "";
         
                 
@@ -45,7 +45,6 @@ public class Path {
                         
                         w = (Integer) cola.desencolar();                     
                         intW = w;
-//                      System.out.println("Vertice" + verts[intW].getName() + "visitado");
                         Edge vert = verts[intW];
                         List lista = vert.getProducts();
                         
@@ -53,7 +52,7 @@ public class Path {
                     
                     //Se encolan los adyacentes
                     for (int j = 0; j < grafo.getNumVerts(); j++) {
-                        if((w != j) && (grafo.existArist(w, j) && arrVisitados[j] == -1)){ //Utilizar la funcion de añadir a la matriz                            
+                        if((w != j) && (grafo.existArist(w, j) && arrVisitados[j] == -1)){                            
                             int valNodo = verts[j].getIndex();
                             cola.encolar(valNodo); 
                             arrVisitados[j] = 0;
@@ -99,8 +98,6 @@ public class Path {
                 Integer sig;
                 sig = (Integer) pila.unstack();
                 valSig = sig;
-//                System.out.println("Vertice" + " " + verts[valSig].getName()+ " " + "visitado");
-                
                 Edge vert = verts[valSig];
                 List lista = vert.getProducts();
                 temp += "Almacen" + " " + vert.getName() + "\n" + lista.getInfo() + "\n";
@@ -172,13 +169,11 @@ public class Path {
                             
                         }                       
                         else{
-                            
-                            //System.out.println("point");
                         }
                     
-                    //Se encolan los adyacentes
+                    //encolar los adyacentes
                     for (int j = 0; j < grafo.getNumVerts(); j++) {
-                        if((w != j) && (grafo.existArist(w, j) && arrVisitados[j] == -1)){ //Utilizar la funcion de añadir a la matriz                            
+                        if((w != j) && (grafo.existArist(w, j) && arrVisitados[j] == -1)){                            
                             int valNodo = verts[j].getIndex();
                             cola.encolar(valNodo); 
                             arrVisitados[j] = 0;
