@@ -8,14 +8,11 @@ package amazon;
  *
  * @author Svetlana Valentina
  */
-public class Edge {
-   //asignarle un name al vértice. 
+public class Edge { 
+    // atributos: nombre y numero del vertice y lista de productos
     protected String name;
-    //Le asigna un número al vértice
     protected int index;
-    //Lista de products:
     protected List products;
-    
     public Edge(String name) {
         this.name = name;
         this.index = -1;
@@ -24,7 +21,7 @@ public class Edge {
     }
    
 
-    //GETTERS Y SETTERS
+    //getters and setters
     
     /**
     * @return name
@@ -68,16 +65,11 @@ public class Edge {
         this.products = products;
     }
  
-// MÉTODOS
+// funciones
     
     //Revisa si el vértice ya existe
     public boolean compare(Edge n){
         return this.name.equals(n.getName());
     }
     
-   
-//    public String toString() {
-//        return name + "(" + index + ")";
-//    }
-// 
 }

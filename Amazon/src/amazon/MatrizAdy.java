@@ -11,19 +11,10 @@ import javax.swing.JOptionPane;
  * @author Svetlana Valentina
  */
 public class MatrizAdy {
-    //Número de vértices
     private static int numVerts;
-    
-    //tamaño máximo de la matriz
     private int maxNodes;
-    
-    //Lista con los vértices
     private static Edge[] verts;
-    
-    //Forma la matriz
     private int [][] matAdy;
-    
-    //Todos los productos
     private String [] totalProducts;
 
 
@@ -82,27 +73,11 @@ public class MatrizAdy {
 
   
     
-    //MÉTODOS
+    //metodos
     
     public boolean isEmpty(){
         return this.numVerts == 0;
     }
-    
-//    //Va a decir si el vértice ya exist o no. Validar
-//    public boolean buscarVertice(String nom){
-//        
-//        Vertice verti = new Vertice(nom);
-//        boolean exist = false;
-//        int i = 0;
-//        for (; (i < numVerts) && !exist;) {
-//            exist = verts[i].comparar(verti);
-//            if(!exist) i++;
-//           
-//        }
-//        
-//        return exist;
-//        
-//    }
     
     //Para retornar el índice de los vértices
      public static int searchIndex(String nom){
@@ -126,21 +101,17 @@ public class MatrizAdy {
         }
     }
     
-//Aristas 
+//Aristas
         
-    public void createArist(String u, String v, int peso){
-        /*En el código lo marcan con true, creo recordar que Ale
-        dijo que en este caso se pondría el peso, así que añadí ese paramétro.       
-     
-        Hacer excepciones por si alguno de los dos no exist, por si superan el maximo, etc.
-        */
+    public void createArist(String u, String v, int width){
+        
         if(!this.isEmpty()){
             
             int valU, valV;
             valU = searchIndex(u);
             valV = searchIndex(v);
             if(valU != -1 && valV != -1){
-                matAdy[valU][valV] = peso;
+                matAdy[valU][valV] = width;
             }
             else{
                 System.out.println("Error, el vértice no existe"); //hacerle format
@@ -184,17 +155,6 @@ public class MatrizAdy {
         return existe;
     }
     
-    //buscar arista:
-//    public boolean getArista(int v, int u){
-//    boolean exist;
-//    if(matAdy[v][u] != 0){
-//        exist = true;
-//    }else{
-//        exist = false;
-//    }
-//    return exist;
-//}
-    
 
 //Vértice
     
@@ -207,8 +167,6 @@ public class MatrizAdy {
         }
         
     }
-    
-//Eliminar vértice no está y no tengo cabeza para pensar en eso ahora. Sorry
     
 //Imprimir la matriz de adyacencia
     

@@ -44,12 +44,14 @@ public class Interface extends javax.swing.JFrame {
         gestion = new javax.swing.JButton();
         grafo = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
         cargartxtpanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         archivotxt = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         select = new javax.swing.JButton();
         volverCarga = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         disponibilidadpanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -98,7 +100,7 @@ public class Interface extends javax.swing.JFrame {
                 cargararchivoActionPerformed(evt);
             }
         });
-        MenuPanel.add(cargararchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 200, 40));
+        MenuPanel.add(cargararchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 200, 40));
 
         STOCK.setText("STOCK");
         STOCK.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +108,7 @@ public class Interface extends javax.swing.JFrame {
                 STOCKActionPerformed(evt);
             }
         });
-        MenuPanel.add(STOCK, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 200, 40));
+        MenuPanel.add(STOCK, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 200, 40));
 
         realizarpedido.setText("Realizar Pedido ");
         realizarpedido.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +116,7 @@ public class Interface extends javax.swing.JFrame {
                 realizarpedidoActionPerformed(evt);
             }
         });
-        MenuPanel.add(realizarpedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 200, 40));
+        MenuPanel.add(realizarpedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 40));
 
         gestion.setText("Gestion de Alamacenes");
         gestion.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +124,7 @@ public class Interface extends javax.swing.JFrame {
                 gestionActionPerformed(evt);
             }
         });
-        MenuPanel.add(gestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 200, 40));
+        MenuPanel.add(gestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 200, 40));
 
         grafo.setText("Grafo ");
         grafo.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +132,7 @@ public class Interface extends javax.swing.JFrame {
                 grafoActionPerformed(evt);
             }
         });
-        MenuPanel.add(grafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 200, 40));
+        MenuPanel.add(grafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 200, 40));
 
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +141,10 @@ public class Interface extends javax.swing.JFrame {
             }
         });
         MenuPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 100, 40));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Amazon.934209dc860398008267c1c712ee41d83a50e451_1.jpg"))); // NOI18N
+        jLabel17.setText("fondo");
+        MenuPanel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         TabbedPane.addTab("Inicio", MenuPanel);
 
@@ -149,11 +155,11 @@ public class Interface extends javax.swing.JFrame {
         archivotxt.setFocusable(false);
         jScrollPane1.setViewportView(archivotxt);
 
-        cargartxtpanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 71, 327, 194));
+        cargartxtpanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 230, 200));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("                     Indique el archivo txt a usar ");
-        cargartxtpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 16, 330, 43));
+        cargartxtpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 220, 43));
 
         select.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         select.setText("Seleccionar");
@@ -162,7 +168,7 @@ public class Interface extends javax.swing.JFrame {
                 selectActionPerformed(evt);
             }
         });
-        cargartxtpanel.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 120, 50));
+        cargartxtpanel.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 120, 50));
 
         volverCarga.setText("Volver");
         volverCarga.addActionListener(new java.awt.event.ActionListener() {
@@ -171,6 +177,13 @@ public class Interface extends javax.swing.JFrame {
             }
         });
         cargartxtpanel.add(volverCarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, -1, 30));
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Buscar dentro de la carpeta test el archivo txt nombrado \"warehouse.txt\"");
+        jLabel1.setPreferredSize(new java.awt.Dimension(300, 16));
+        cargartxtpanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 390, 20));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aws (1).png"))); // NOI18N
         cargartxtpanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 350));
 
         TabbedPane.addTab("Cargar TXT ", cargartxtpanel);
@@ -179,22 +192,22 @@ public class Interface extends javax.swing.JFrame {
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ingrese el almacén de origen:");
-        disponibilidadpanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        disponibilidadpanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, -1, -1));
 
         dispoOrigen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dispoOrigenActionPerformed(evt);
             }
         });
-        disponibilidadpanel.add(dispoOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 60, 40));
+        disponibilidadpanel.add(dispoOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, 60, 40));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Recorrido de profundidad");
-        disponibilidadpanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, -1, -1));
+        disponibilidadpanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Recorrido en anchura");
-        disponibilidadpanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
+        disponibilidadpanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         bRecorrer.setText("Recorrer almacenes");
         bRecorrer.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +215,7 @@ public class Interface extends javax.swing.JFrame {
                 bRecorrerActionPerformed(evt);
             }
         });
-        disponibilidadpanel.add(bRecorrer, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 170, 80));
+        disponibilidadpanel.add(bRecorrer, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 170, 80));
 
         volverDispo.setText("Volver");
         volverDispo.addActionListener(new java.awt.event.ActionListener() {
@@ -210,15 +223,17 @@ public class Interface extends javax.swing.JFrame {
                 volverDispoActionPerformed(evt);
             }
         });
-        disponibilidadpanel.add(volverDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 30));
+        disponibilidadpanel.add(volverDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, -1, 30));
 
         jScrollPane2.setViewportView(outputAnchura);
 
-        disponibilidadpanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 170, 250));
+        disponibilidadpanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 140, 220));
 
         jScrollPane3.setViewportView(outputProfundidad);
 
-        disponibilidadpanel.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 170, 250));
+        disponibilidadpanel.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 140, 220));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aws (1).png"))); // NOI18N
         disponibilidadpanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 350));
 
         TabbedPane.addTab("Stock", disponibilidadpanel);
@@ -247,7 +262,7 @@ public class Interface extends javax.swing.JFrame {
         outputCantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         outputCantidad.setText("0");
         outputCantidad.setFocusable(false);
-        pedidopanel.add(outputCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 70, 40));
+        pedidopanel.add(outputCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 70, 40));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Producto");
@@ -255,7 +270,7 @@ public class Interface extends javax.swing.JFrame {
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Cantidad");
-        pedidopanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, -1, -1));
+        pedidopanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, -1));
 
         menosB.setText("-");
         menosB.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +278,7 @@ public class Interface extends javax.swing.JFrame {
                 menosBActionPerformed(evt);
             }
         });
-        pedidopanel.add(menosB, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 50, 40));
+        pedidopanel.add(menosB, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 50, 40));
 
         masB.setText("+");
         masB.addActionListener(new java.awt.event.ActionListener() {
@@ -271,7 +286,7 @@ public class Interface extends javax.swing.JFrame {
                 masBActionPerformed(evt);
             }
         });
-        pedidopanel.add(masB, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 50, 40));
+        pedidopanel.add(masB, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 50, 40));
 
         outputProductos.setFocusable(false);
         jScrollPane6.setViewportView(outputProductos);
@@ -287,7 +302,7 @@ public class Interface extends javax.swing.JFrame {
                 addProductActionPerformed(evt);
             }
         });
-        pedidopanel.add(addProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, 30));
+        pedidopanel.add(addProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, -1, 30));
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Lista de productos");
@@ -316,6 +331,8 @@ public class Interface extends javax.swing.JFrame {
             }
         });
         pedidopanel.add(verStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 90, 30));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aws (1).png"))); // NOI18N
         pedidopanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 350));
 
         TabbedPane.addTab("Pedido", pedidopanel);
@@ -592,6 +609,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton grafo;
     private javax.swing.JButton hacerPedido;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -599,6 +617,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

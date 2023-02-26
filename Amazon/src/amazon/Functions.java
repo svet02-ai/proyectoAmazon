@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
  *
  * @author Svetlana Valentina
  */
+
+// lectura del txt
 public class Functions {
     public MatrizAdy buildGrafo(String dir){
         MatrizAdy grafo = null;
@@ -50,8 +52,8 @@ public class Functions {
             
             
             /*
-            *Crear grafo a partir de la cantidad de almacenes. Se le resta 2
-            *porque "Almacenes" y "Rutas" no cuentan.
+            *Crear grafo a partir de la cantidad de almacenes
+            *
             */
             
             grafo = new MatrizAdy(cont);
@@ -73,7 +75,7 @@ public class Functions {
                 if(j == 0){
                     
                     int position = (rout[j+2].length())-1;
-                    String subrout = rout[j+2].substring(0, position); //Esto es para eliminar la letra que acompaña al número                 
+                    String subrout = rout[j+2].substring(0, position); //elimina la letra que acompaña al número                 
                     grafo.createArist(rout[j], rout[j+1], Integer.parseInt(subrout));
                 
                     j+=2;
@@ -89,7 +91,7 @@ public class Functions {
                 else{                    
                     
                     int position1 = (rout[j].length())-1;
-                    char subrout1 = rout[j].charAt(position1); //Tomar únicamente la letra 
+                    char subrout1 = rout[j].charAt(position1); //Toma solo la letra 
                    
                     int position2 = (rout[j+2].length())-1;
                     String subrout2 = rout[j+2].substring(0, position2);
@@ -101,7 +103,7 @@ public class Functions {
             }while(j+2 <= (rout.length));
             
             
-            //CREAR LISTAS DE PRODUCTOS E INSERTARLAS EN LOS VÉRTICES
+            //lista de productos en los vertices
             
            
             int index = -2;
