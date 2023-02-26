@@ -10,23 +10,23 @@ package amazon;
  */
 public class Stack {
   
-    private Node top;
+    private Node peak;
     private int size;
 
     //Constructor 
     public Stack() {
-        this.top = null;
+        this.peak = null;
         this.size = 0;
     }
 
-    //Obtener top
-    public Node getTop() {
-        return top;
+    //Obtener peak
+    public Node getPeak() {
+        return peak;
     }
 
-    //Asignar top
-    public void setTop(Node cima) {
-        this.top = cima;
+    //Asignar peak
+    public void setPeak(Node cima) {
+        this.peak = cima;
     }
     
      //Obtener tamaño
@@ -42,34 +42,34 @@ public class Stack {
     //Apilar 
     public void pile(Object data) {
         Node aux = new Node(data);
-        aux.setPnext(this.top);
-        setTop(aux);
+        aux.setPnext(this.peak);
+        setPeak(aux);
         size++;
     }
 
     //Desapilar 
     public Object unstack() {
-        Object info = top.getData2();
-        this.top = top.getPnext();
+        Object info = peak.getData2();
+        this.peak = peak.getPnext();
         size--;
     return info;
     }
 
   
-    //Obtener valor del top o cima
+    //Obtener valor del peak o cima
     public Object top() {
-        return top.getData2();
+        return peak.getData2();
     }
 
     //Esta vacio
     public boolean isEmpty() {
-        return top == null;
+        return peak == null;
     }
 
 
     //Mostrar pila
     public void showStack() {       
-        Node pAux = this.top;
+        Node pAux = this.peak;
         while (pAux != null) {
             System.out.println(pAux.getData2());
             pAux = pAux.getPnext();
@@ -98,7 +98,7 @@ public class Stack {
     }
 
     //Vaciar pila
-    public void emptyStack() {
+    public void clearStack() {
         while (!isEmpty()) {
             this.unstack();
         }
