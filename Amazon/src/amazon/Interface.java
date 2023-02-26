@@ -330,7 +330,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void verStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verStockActionPerformed
         String temp = "";
-
+        
         if(grafox != null){
 
             temp = Path.depthWidth(grafox, "A");
