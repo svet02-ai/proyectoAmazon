@@ -15,7 +15,7 @@ public class MatrizAdy {
     private static int numVerts;
     
     //tamaño máximo de la matriz
-    private int maxNodos;
+    private int maxNodes;
     
     //Lista con los vértices
     private static Edge[] verts;
@@ -24,7 +24,7 @@ public class MatrizAdy {
     private int [][] matAdy;
     
     //Todos los productos
-    private String [] totalProductos;
+    private String [] totalProducts;
 
 
       
@@ -32,7 +32,7 @@ public class MatrizAdy {
     public MatrizAdy(int max) {
         matAdy = new int [max][max];
         verts = new Edge[max];
-        maxNodos = max;        
+        maxNodes = max;        
         numVerts = 0;
         for (int i = 0; i < max; i++) {
             for (int j = 0; j < max; j++) {
@@ -53,11 +53,11 @@ public class MatrizAdy {
     }
 
     public int getMaxVerts() {
-        return maxNodos;
+        return maxNodes;
     }
 
     public void setMaxVerts(int maxVerts) {
-        this.maxNodos = maxVerts;
+        this.maxNodes = maxVerts;
     }
     
     /**
@@ -88,35 +88,35 @@ public class MatrizAdy {
         return this.numVerts == 0;
     }
     
-//    //Va a decir si el vértice ya existe o no. Validar
+//    //Va a decir si el vértice ya exist o no. Validar
 //    public boolean buscarVertice(String nom){
 //        
 //        Vertice verti = new Vertice(nom);
-//        boolean existe = false;
+//        boolean exist = false;
 //        int i = 0;
-//        for (; (i < numVerts) && !existe;) {
-//            existe = verts[i].comparar(verti);
-//            if(!existe) i++;
+//        for (; (i < numVerts) && !exist;) {
+//            exist = verts[i].comparar(verti);
+//            if(!exist) i++;
 //           
 //        }
 //        
-//        return existe;
+//        return exist;
 //        
 //    }
     
     //Para retornar el índice de los vértices
-     public static int buscarIndex(String nom){
+     public static int searchIndex(String nom){
         
         Edge verti = new Edge(nom);
-        boolean existe = false;
+        boolean exist = false;
         int i = 0;
-        for (; (i < numVerts) && !existe;) {
-            existe = verts[i].compare(verti);
-            if(!existe) i++;
+        for (; (i < numVerts) && !exist;) {
+            exist = verts[i].compare(verti);
+            if(!exist) i++;
            
         }
         
-        if(existe){
+        if(exist){
         return i;
         }
         else{
@@ -128,17 +128,17 @@ public class MatrizAdy {
     
 //Aristas 
         
-    public void crearArista(String u, String v, int peso){
+    public void createArist(String u, String v, int peso){
         /*En el código lo marcan con true, creo recordar que Ale
         dijo que en este caso se pondría el peso, así que añadí ese paramétro.       
      
-        Hacer excepciones por si alguno de los dos no existe, por si superan el maximo, etc.
+        Hacer excepciones por si alguno de los dos no exist, por si superan el maximo, etc.
         */
         if(!this.isEmpty()){
             
             int valU, valV;
-            valU = buscarIndex(u);
-            valV = buscarIndex(v);
+            valU = searchIndex(u);
+            valV = searchIndex(v);
             if(valU != -1 && valV != -1){
                 matAdy[valU][valV] = peso;
             }
@@ -153,12 +153,12 @@ public class MatrizAdy {
     }
     
     
-    public void eliminarArista(String u, String v){
+    public void deleteArist(String u, String v){
         
         if(!this.isEmpty()){
             int valU, valV;
-            valU = buscarIndex(u);
-            valV = buscarIndex(v);
+            valU = searchIndex(u);
+            valV = searchIndex(v);
            if(valU != -1 && valV != -1){
                 matAdy[valU][valV] = 0;
             }
@@ -173,8 +173,8 @@ public class MatrizAdy {
         
     }
     
-    //Comprobar si existe la arista
-    public boolean existeArista(int v, int u){
+    //Comprobar si exist la arista
+    public boolean existArist(int v, int u){
         boolean existe;
         if(matAdy[v][u] != 0){
             existe = true;
@@ -186,20 +186,20 @@ public class MatrizAdy {
     
     //buscar arista:
 //    public boolean getArista(int v, int u){
-//    boolean existe;
+//    boolean exist;
 //    if(matAdy[v][u] != 0){
-//        existe = true;
+//        exist = true;
 //    }else{
-//        existe = false;
+//        exist = false;
 //    }
-//    return existe;
+//    return exist;
 //}
     
 
 //Vértice
     
-    public void crearVertice(String nom){
-        int existe = buscarIndex(nom);
+    public void createVertex(String nom){
+        int existe = searchIndex(nom);
         if(existe == -1){
             Edge verti = new Edge(nom);
             verti.setIndex(numVerts);
@@ -215,9 +215,9 @@ public class MatrizAdy {
     public void printMatriz(){
         System.out.printf("La matriz contiene %d vertices \n", numVerts);
         String matriz = "";
-        for (int i = 0; i < maxNodos; i++) {
+        for (int i = 0; i < maxNodes; i++) {
             matriz += ",";
-            for (int j = 0; j < maxNodos; j++) {
+            for (int j = 0; j < maxNodes; j++) {
                 matriz += (matAdy[i][j]);
              
             }
@@ -263,7 +263,7 @@ public class MatrizAdy {
         return gSal;
     }
 
-     public String [] ProductosTotal()
+     public String [] TotalProduct()
     {
         Edge x = new Edge(null);
         int contador = 0;
@@ -273,19 +273,19 @@ public class MatrizAdy {
             x = verts[i];
             List list = x.getProducts();
             contador += list.getSize();
-            temp += list.getNombre();
+            temp += list.getName();
         }
-        totalProductos = new String [contador];
+        totalProducts = new String [contador];
         String [] aux = new String [contador];
         aux = temp.split(";");
         for(int k = 1; k<aux.length-1; k++)
         {
-           totalProductos[k]=aux[k];
+           totalProducts[k]=aux[k];
         }
-       return totalProductos;
+       return totalProducts;
     }
     
-    public String [] pedidoAlmacenes(Product [] productlist, MatrizAdy grafo)
+    public String [] WarehouseOrder(Product [] productlist, MatrizAdy grafo)
     {
         String [] Alist;
         String Aux = " ";
@@ -301,7 +301,7 @@ public class MatrizAdy {
        return Alist;
     }
     
-    public void RestarProductos(Product [] productlist, MatrizAdy grafo){
+    public void subtractProducts(Product [] productlist, MatrizAdy grafo){
     int encontrado;
     Product product;
     int nuevaCantidad=0;
@@ -309,11 +309,11 @@ public class MatrizAdy {
     try{
         for (int i = 0; i < verts.length; i++) {
             for (int j = 0; j < productlist.length; j++) {
-                encontrado = verts[i].getProducts().compararProductoCantidad(productlist[j].getQuantity());
+                encontrado = verts[i].getProducts().compareProductQuantity(productlist[j].getQuantity());
                 if(encontrado != -1){
-                    temp = verts[i].getProducts().getNodo(encontrado);
-                    nuevaCantidad = Integer.parseInt(verts[i].getProducts().ObtenerCantidad()) - productlist[j].getQuantity();
-                    product = new Product(verts[i].getProducts().getNombre(), nuevaCantidad);
+                    temp = verts[i].getProducts().getNode(encontrado);
+                    nuevaCantidad = Integer.parseInt(verts[i].getProducts().obtainCuantity()) - productlist[j].getQuantity();
+                    product = new Product(verts[i].getProducts().getName(), nuevaCantidad);
                     temp.setData(product);;
                 } 
             }

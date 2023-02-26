@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author Svetlana Valentina
  */
 public class Functions {
-    public MatrizAdy armarGrafo(String dir){
+    public MatrizAdy buildGrafo(String dir){
         MatrizAdy grafo = null;
        
         
@@ -58,23 +58,23 @@ public class Functions {
             
             //Crear los vértices con los nombres de los almacenes
             for(int i = 0; i< noms.length(); i++){
-                char nombre = noms.charAt(i);
-                grafo.crearVertice(Character.toString(nombre));
+                char name = noms.charAt(i);
+                grafo.createVertex(Character.toString(name));
             }
             
             
             //Asignar aristas
            
-            String rutas = arr[cont+2]; //se toma todo el string con las rutas
+            String routs = arr[cont+2]; //se toma todo el string con las rutas
             
-            String[] rout = rutas.split(","); //se separan las rutas
+            String[] rout = routs.split(","); //se separan las rutas
             int j = 0;
             do{
                 if(j == 0){
                     
                     int position = (rout[j+2].length())-1;
                     String subrout = rout[j+2].substring(0, position); //Esto es para eliminar la letra que acompaña al número                 
-                    grafo.crearArista(rout[j], rout[j+1], Integer.parseInt(subrout));
+                    grafo.createArist(rout[j], rout[j+1], Integer.parseInt(subrout));
                 
                     j+=2;
                 }
@@ -82,7 +82,7 @@ public class Functions {
                     int position1 = (rout[j].length())-1;
                     char subrout1 = rout[j].charAt(position1);
                    
-                    grafo.crearArista(Character.toString(subrout1), rout[j+1], Integer.parseInt(rout[j+2]));
+                    grafo.createArist(Character.toString(subrout1), rout[j+1], Integer.parseInt(rout[j+2]));
                     
                     j+=2;
                 }
@@ -94,7 +94,7 @@ public class Functions {
                     int position2 = (rout[j+2].length())-1;
                     String subrout2 = rout[j+2].substring(0, position2);
                     
-                    grafo.crearArista(Character.toString(subrout1), rout[j+1], Integer.parseInt(subrout2));
+                    grafo.createArist(Character.toString(subrout1), rout[j+1], Integer.parseInt(subrout2));
                     
                     j+=2;
                 }
@@ -120,20 +120,20 @@ public class Functions {
                     if(bfRead.contains(";")){
                         String replace = bfRead.replace(";", "");
                     
-                        String[] productoList = replace.split(",");
+                        String[] productList = replace.split(",");
 
-                        Product product = new Product(productoList[0], Integer.parseInt(productoList[1]));                    
+                        Product product = new Product(productList[0], Integer.parseInt(productList[1]));                    
 
                         if((verts[index].getProducts()).isEmpty()){
                             List lista = new List();
-                            Node nodo = new Node(product);
-                            lista.addAtEnd(nodo);
+                            Node node = new Node(product);
+                            lista.addAtEnd(node);
                             verts[index].setProducts(lista);
                         }
                         else{
                             List lista = verts[index].getProducts();
-                            Node nodo = new Node(product);
-                            lista.addAtEnd(nodo);
+                            Node node = new Node(product);
+                            lista.addAtEnd(node);
                             verts[index].setProducts(lista);
                             }
                     
@@ -145,14 +145,14 @@ public class Functions {
 
                         if((verts[index].getProducts()).isEmpty()){
                             List lista = new List();
-                            Node nodo = new Node(product);
-                            lista.addAtEnd(nodo);
+                            Node node = new Node(product);
+                            lista.addAtEnd(node);
                             verts[index].setProducts(lista);
                         }
                         else{
                             List lista = verts[index].getProducts();
-                            Node nodo = new Node(product);
-                            lista.addAtEnd(nodo);
+                            Node node = new Node(product);
+                            lista.addAtEnd(node);
                             verts[index].setProducts(lista);
                         }
                     }
@@ -174,14 +174,14 @@ public class Functions {
        
     }
     
-    public void actualizarTxt(MatrizAdy grafo){
+    public void actTxt(MatrizAdy grafo){
         
     }
     
-    public void actualizarTxt(MatrizAdy grafo, String dir){
+    public void actTxt(MatrizAdy grafo, String dir){
         Edge[] vertices = grafo.getVerts();
         String temp = "";
-        Product producto = null; 
+        Product product = null; 
         try{
             
             PrintWriter pw = new PrintWriter(dir);
@@ -194,20 +194,20 @@ public class Functions {
                 List lista = vertices[i].getProducts();
                 Node temporal = lista.getPfirst();
                 for (int j = 0; j < lista.getSize(); j++) {
-                    producto = temporal.getData();
+                    product = temporal.getData();
                     
                     if(temporal != lista.getPlast()){
                     
-                        temp = producto.getName() + "," + producto.getQuantity();
+                        temp = product.getName() + "," + product.getQuantity();
                         pw.print(temp + "\n");
-                        temporal = lista.nextNodo(temporal); 
+                        temporal = lista.nextNode(temporal); 
                     }
                     else
                     {
                                             
-                        temp = producto.getName() + "," + producto.getQuantity() + ";";
+                        temp = product.getName() + "," + product.getQuantity() + ";";
                         pw.print(temp + "\n");
-                        temporal = lista.nextNodo(temporal); 
+                        temporal = lista.nextNode(temporal); 
                     }
                 
                 

@@ -84,7 +84,7 @@ public class List {
     }
     
     //OBTENER EL PROXIMO NODO
-    public Node nextNodo(Node  enlace){
+    public Node nextNode(Node  enlace){
         if(enlace.getPnext() != null){
             enlace =enlace.getPnext();
             return enlace;                    
@@ -113,7 +113,7 @@ public class List {
 
                 print += " "+ temp.getData().getName()+ " " + temp.getData().getQuantity() + "|";
                 
-                temp = nextNodo(temp);               
+                temp = nextNode(temp);               
                 
                }
             JOptionPane.showMessageDialog(null,print);
@@ -136,7 +136,7 @@ public class List {
 
                 print += temp.getData().getName()+ ":" + " " + temp.getData().getQuantity() +"\n";
                 
-                temp = nextNodo(temp);               
+                temp = nextNode(temp);               
                 
                }
             
@@ -146,7 +146,7 @@ public class List {
         
         }
     
-     public String getNombre(){
+     public String getName(){
         Node temp = pfirst;
         if (this.isEmpty()){
             JOptionPane.showMessageDialog(null, "La lista está vacía");
@@ -158,7 +158,7 @@ public class List {
 
                 print += temp.getData().getName() + " ; ";
                 
-                temp = nextNodo(temp);               
+                temp = nextNode(temp);               
                 
                }
             
@@ -168,7 +168,7 @@ public class List {
         
         }
     
-    public boolean compararProducto(String producto){
+    public boolean compareProduct(String producto){
         Node temp = pfirst;
         boolean found = false;
         
@@ -185,7 +185,7 @@ public class List {
                     break;
                         } 
                 else{
-                    temp = nextNodo(temp);  
+                    temp = nextNode(temp);  
                         }
 
                }
@@ -278,7 +278,7 @@ public class List {
     }
     
     //OBTENER NODO POR INDICE
-    public Node getNodo(int posicion){
+    public Node getNode(int posicion){
         if(isEmpty()){
             JOptionPane.showMessageDialog(null, "Lista vacía");
             return null;
@@ -294,7 +294,7 @@ public class List {
         }
     }
     
-         public String ObtenerCantidad(){
+         public String obtainCuantity(){
         Node temp = pfirst;
         if (this.isEmpty()){
             JOptionPane.showMessageDialog(null, "La lista está vacía");
@@ -306,7 +306,7 @@ public class List {
 
                 print += temp.getData().getQuantity();
                 
-                temp = nextNodo(temp);               
+                temp = nextNode(temp);               
                 
                }
             
@@ -316,7 +316,7 @@ public class List {
         
         }
     
-        public int compararProductoCantidad(int cant){
+        public int compareProductQuantity(int cant){
         Node temp = pfirst;
         int cont = 0;
         boolean found = false;
@@ -334,7 +334,7 @@ public class List {
                     break;
                         } 
                 else{
-                    temp = nextNodo(temp);
+                    temp = nextNode(temp);
                     cont ++;
                         } 
                }
