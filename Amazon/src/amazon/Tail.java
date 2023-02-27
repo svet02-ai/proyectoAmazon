@@ -14,7 +14,7 @@ public class Tail {
     private Node front;
     private Node back;
 
-    //CONSTRUCTOR COLA
+    //constructor
     public Tail() {
         this.size = 0;
         this.front = null;
